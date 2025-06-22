@@ -179,9 +179,10 @@
     }
 
     function toggleSocialMedia() {
-      const panel = document.getElementById('socialPanel');
-      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-    }
+  const panel = document.getElementById('socialPanel');
+  const currentDisplay = window.getComputedStyle(panel).display;
+  panel.style.display = currentDisplay === 'none' ? 'block' : 'none';
+}
 
     window.onload = () => {
       const savedTheme = localStorage.getItem('theme');
